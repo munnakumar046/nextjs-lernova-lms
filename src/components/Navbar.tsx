@@ -1,4 +1,4 @@
-import { Bell, BellPlus, MessageCircle, Search } from "lucide-react";
+import { Bell, MessageCircle, Search } from "lucide-react";
 import { Avatar } from "./ui/avatar";
 
 function Navbar() {

@@ -18,7 +18,9 @@ export default function DashboardLayout({
           className="flex items-center justify-center lg:justify-start gap-4 "
         >
           <GraduationCap />
-          <span className="hidden lg:block">Lernova</span>
+          <span className="hidden lg:block text-2xl font-semibold">
+            Lernova
+          </span>
         </Link>
         <Menu />
       </div>

@@ -19,6 +19,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
+import { role } from "@/lib/data";
 
 const menuItems = [
   {
@@ -143,16 +144,20 @@ function Menu() {
           <span className="hidden lg:block text-gray-400 font-light my-2">
             {group.title}
           </span>
-          {group.items.map((item) => (
-            <Link
-              href={item.href}
-              key={item.label}
-              className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1 "
-            >
-              {item.icon}
-              <span className="hidden lg:block">{item.label}</span>
-            </Link>
-          ))}
+          {group.items.map((item) => {
+            if (item.visible.includes(role)) {
+              return (
+                <Link
+                  href={item.href}
+                  key={item.label}
+                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-1 "
+                >
+                  {item.icon}
+                  <span className="hidden lg:block">{item.label}</span>
+                </Link>
+              );
+            }
+          })}
         </div>
       ))}
     </div>
